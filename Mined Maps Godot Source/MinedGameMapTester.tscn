@@ -68,8 +68,8 @@ margin_bottom = 157.0
 custom_fonts/font = ExtResource( 1 )
 text = "Welcome the Mined Map
 use the arrow keys
-to navagate the 
-MINED"
+to navigate the 
+MINED enjoy "
 valign = 1
 
 [node name="XandY" type="Label" parent="Controls/UI_Title/VBoxContainer"]

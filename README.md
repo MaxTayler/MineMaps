@@ -19,7 +19,7 @@ Purple - You are j
 Pink - Next 
 Red - Death 
 Green - Levl start location  (When you die you land on this location) 
-Yellow  - You 
+Yellow  - You have found a new area
 
 __________________________________________________________________________________________
 

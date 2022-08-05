@@ -4,10 +4,9 @@ The light will change colors to indicate level of safety on the 2d map, use the 
 This is my first project released with godot so there may be a few issues. You can  comment on them at the itch.io page, and try the online version.
 @{link to itch.io}
 
-UP & W 
-DOWNS & S
-LEFT & A
-RIGHT & D
+HOW TO PLAY
+UP & W  DOWNS & S
+LEFT & A RIGHT & D
 R - Restart This LEVEL
 G - Restart Game to the First Level
 The Light will Blink when you move in the pressed direction or try to. 

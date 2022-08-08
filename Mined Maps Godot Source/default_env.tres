@@ -11,6 +11,7 @@ sun_angle_max = 61.18
 sun_energy = 0.0
 
 [resource]
-background_mode = 2
 background_sky = SubResource( 1 )
 background_color = Color( 0.0745098, 0.0431373, 0.0941176, 1 )
+ambient_light_energy = 0.0
+ambient_light_sky_contribution = 0.0

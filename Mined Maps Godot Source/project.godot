@@ -23,7 +23,7 @@ _global_script_class_icons={
 config/name="Mined Maps Godot Open"
 config/description="RGD Light Puzzle Game"
 run/main_scene="res://MinedGameMapTester.tscn"
-config/icon="res://MinedMaps_Icon.png"
+config/icon="res://MinedMapsIcon256.png"
 config/windows_native_icon="res://MinedMaps_Icon_256.ico"
 
 [display]

@@ -11,7 +11,7 @@ func _input(event):
 	if event is InputEventKey:
 		if event.pressed:
 			print("Input  Works")#start()
-			controls.next_level()
+			controls.start()
 			queue_free()
 func _draw():
 	var color = Color(0.5,0.5,0.5,0.8)

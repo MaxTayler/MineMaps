@@ -1,6 +1,5 @@
 extends Label
 
-
 func update_debug(x,y):
 	var format_string = "X:{x} Y:{y}"
 

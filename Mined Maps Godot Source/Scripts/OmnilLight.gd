@@ -4,7 +4,7 @@ extends Light
 # Declare member variables here. Examples:
 # var color1 = Color( 1, 0.84, 0, 1 ) 
 # var color1 = Color( 0, 0.75, 0.5, 1 ) # var b = "text"
-var color2 = Color( 0.39, 0.58, 0.93, 1 ) #-- Cornflower color
+var color2 = Color( 0, 0, 0, 0 ) #-- Cornflower color
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

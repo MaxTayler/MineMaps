@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://fonts/new_dynamicfont.tres" type="DynamicFont" id=1]
-[ext_resource path="res://TexturePlateTest.png" type="Texture" id=2]
+[ext_resource path="res://MinedMapsTexture_2.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Maps/map_3.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/map_control.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/OmnilLight.gd" type="Script" id=5]
@@ -33,18 +33,8 @@ environment = ExtResource( 9 )
 [node name="Controls" type="Node" parent="."]
 script = ExtResource( 4 )
 
-[node name="Light" type="DirectionalLight" parent="Controls"]
-transform = Transform( 1, 0, 0, 0, -1, 0, 0, 0, -1, -1.49362, -0.247237, -0.595271 )
-visible = false
-light_color = Color( 0.270588, 0.435294, 0.694118, 1 )
-light_energy = 0.275
-light_specular = 0.206
-directional_shadow_max_distance = 0.8
-script = ExtResource( 5 )
-
 [node name="OmniLight" type="OmniLight" parent="Controls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.520058, -0.837417, -1.70885 )
-light_color = Color( 0.882353, 0.866667, 0.729412, 1 )
 light_energy = 2.881
 light_indirect_energy = 1.881
 light_specular = 6.665
@@ -54,7 +44,6 @@ script = ExtResource( 5 )
 [node name="UI_Title" type="Control" parent="Controls"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 14 )
 script = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Controls/UI_Title"]
@@ -77,21 +66,11 @@ and show Map
 autowrap = true
 script = ExtResource( 8 )
 
-[node name="Welcome" type="Label" parent="Controls/UI_Title/VBoxContainer"]
-visible = false
-margin_right = 329.0
-margin_bottom = 157.0
-size_flags_horizontal = 5
-custom_fonts/font = ExtResource( 1 )
-text = "Welcome the Mined Map
-use the arrow keys
-to navigate the 
-MINED enjoy "
-valign = 1
-
 [node name="XandY" type="Label" parent="Controls/UI_Title/VBoxContainer"]
 margin_right = 329.0
 margin_bottom = 41.0
+hint_tooltip = "Position on Map"
+mouse_filter = 0
 custom_colors/font_color = Color( 0.839216, 0.52549, 0.270588, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 6 )
@@ -99,14 +78,19 @@ text = "X : 0 Y: 0"
 valign = 1
 script = ExtResource( 7 )
 
+[node name="MapPrint" type="Label" parent="Controls/UI_Title/VBoxContainer"]
+visible = false
+margin_right = 329.0
+margin_bottom = 157.0
+size_flags_horizontal = 5
+custom_fonts/font = ExtResource( 1 )
+valign = 1
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="Controls/UI_Title"]
-anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -246.0
-margin_top = -177.0
-margin_bottom = -3.0
+margin_top = -161.0
+margin_right = 206.0
 alignment = 2
 
 [node name="Label" type="Label" parent="Controls/UI_Title/VBoxContainer2"]
@@ -117,29 +101,39 @@ margin_bottom = 51.0
 text = "POINTS"
 
 [node name="RichTextLabel" type="Label" parent="Controls/UI_Title/VBoxContainer2"]
-margin_top = 55.0
-margin_right = 246.0
-margin_bottom = 92.0
+margin_top = 111.0
+margin_right = 206.0
+margin_bottom = 125.0
 text = "Game By Max Tayler"
 
-[node name="Button" type="LinkButton" parent="Controls/UI_Title/VBoxContainer2"]
-margin_top = 96.0
-margin_right = 246.0
-margin_bottom = 133.0
+[node name="Itch" type="LinkButton" parent="Controls/UI_Title/VBoxContainer2"]
+margin_top = 129.0
+margin_right = 206.0
+margin_bottom = 143.0
 hint_tooltip = "Will open in default browser."
 shortcut_in_tooltip = false
-text = "Link to Itch.io page"
+text = "Link to Max's Itch page"
 script = ExtResource( 18 )
 
-[node name="Button2" type="LinkButton" parent="Controls/UI_Title/VBoxContainer2"]
-margin_top = 137.0
-margin_right = 246.0
-margin_bottom = 174.0
+[node name="GitHub" type="LinkButton" parent="Controls/UI_Title/VBoxContainer2"]
+margin_top = 147.0
+margin_right = 206.0
+margin_bottom = 161.0
 hint_tooltip = "Will open in default browser."
 focus_mode = 2
 shortcut_in_tooltip = false
-text = "Link to GitHub Page"
+text = "Link to GitHub Project"
 script = ExtResource( 19 )
+
+[node name="Label" type="Label" parent="Controls/UI_Title"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -227.0
+text = "Press R to Restart Level
+Press G to Restart Game
+Esc to Exit Fullscreen "
+valign = 2
 
 [node name="LCD" type="Spatial" parent="Controls"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.376044, 5.41178, -1.13316 )
@@ -194,47 +188,51 @@ light_energy = 0.4
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="BackgroundTexture" type="Sprite3D" parent="."]
 transform = Transform( 2.1101, 0, 0, 0, 2.10207, 0.0871731, 0, -0.183944, 0.996193, -0.00625706, 1.63542, -3.80701 )
 shaded = true
 texture = ExtResource( 2 )
 
-[node name="Mined" parent="." instance=ExtResource( 16 )]
-transform = Transform( -4.92807e-08, 0, -1.12741, 0, 1.06098, 0, 1.06098, 0, -4.63769e-08, -0.255619, -1.26661, -3.94916 )
+[node name="MinedEnterence" parent="." instance=ExtResource( 16 )]
+transform = Transform( -4.63769e-08, 0, 1.12741, 0, 1.06098, 0, -1.06098, 0, -4.92807e-08, -0.255619, -1.18301, -4.11862 )
 
 [node name="Start" type="Control" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -513.5
+margin_left = -512.0
 margin_top = -299.0
-margin_right = 513.5
-margin_bottom = 299.0
+margin_right = 512.0
+margin_bottom = 157.0
+mouse_filter = 1
 script = ExtResource( 15 )
 
-[node name="Label" type="Label" parent="Start"]
+[node name="Title" type="Label" parent="Start"]
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -125.5
-margin_top = -65.0
-margin_right = 135.5
-margin_bottom = 65.0
+anchor_bottom = 1.0
+margin_left = -136.5
+margin_top = 229.0
+margin_right = 137.5
+margin_bottom = -305.0
 custom_fonts/font = ExtResource( 17 )
-text = "START"
+text = "MINE MAPS"
 align = 1
-valign = 1
 
 [node name="Label2" type="Label" parent="Start"]
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 0.5
-margin_top = 316.0
-margin_right = 35.5
-margin_bottom = -195.0
-text = "The Light at the Mines Enterence change colro "
+margin_left = -216.5
+margin_top = 282.0
+margin_right = 217.5
+margin_bottom = -215.0
+text = "HOW TO PLAY
+The Light at the Mines Enterence indicates your safety on the map.
+Use the ARROW to Navigate the 2D Map. 
+If you Hit a Red Tile you will restart to the start location in the level.
+PRESS ANYKEY TO START"
 align = 1
 valign = 1

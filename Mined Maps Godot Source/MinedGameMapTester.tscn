@@ -79,12 +79,14 @@ valign = 1
 script = ExtResource( 7 )
 
 [node name="MapPrint" type="Label" parent="Controls/UI_Title/VBoxContainer"]
-visible = false
+margin_top = 45.0
 margin_right = 329.0
-margin_bottom = 157.0
+margin_bottom = 82.0
 size_flags_horizontal = 5
 custom_fonts/font = ExtResource( 1 )
 valign = 1
+autowrap = true
+script = ExtResource( 8 )
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Controls/UI_Title"]
 anchor_top = 1.0

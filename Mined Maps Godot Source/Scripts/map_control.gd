@@ -80,11 +80,11 @@ func _process(event):
 
 	if Input.is_action_just_pressed("reset"):
 		death()
-		#if Input.is_action_just_pressed("show_map") == true:
-		#var format_string = "{map}"
-		# Using the 'format' method, replace the 'str' placeholder
-		#var actual_string = format_string.format({"map": $UI_Title.map_2d})
-		#$UI_Title/VBoxContainer/Label2.update_text(actual_string)
+		
+	#if Input.is_action_just_pressed("show_map") == true:
+	#	var format_string = "{map}"
+	#	var actual_string = format_string.format({"map": load_level.map_2d})
+	#	print(actual_string)
 		
 func update_tile():
 	$OmniLight.update_color(color_load)

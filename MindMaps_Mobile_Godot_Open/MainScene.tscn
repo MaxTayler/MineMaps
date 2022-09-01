@@ -1,0 +1,560 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://CreditButton.gd" type="Script" id=1]
+[ext_resource path="res://MinedMap_mobile.png" type="Texture" id=2]
+[ext_resource path="res://HowToButton.gd" type="Script" id=3]
+[ext_resource path="res://Control.gd" type="Script" id=4]
+[ext_resource path="res://Maps/Map1.gd" type="Script" id=5]
+[ext_resource path="res://Maps/Map0.gd" type="Script" id=6]
+[ext_resource path="res://ButtonImages/CreditButtonImage.png" type="Texture" id=7]
+[ext_resource path="res://ButtonImages/ArrowButtonImage.png" type="Texture" id=8]
+[ext_resource path="res://ButtonImages/QuestionButtonImage.png" type="Texture" id=9]
+[ext_resource path="res://Maps/Map2.gd" type="Script" id=10]
+[ext_resource path="res://Maps/Map3.gd" type="Script" id=11]
+[ext_resource path="res://Maps/Map4.gd" type="Script" id=12]
+[ext_resource path="res://Maps/Map5.gd" type="Script" id=13]
+[ext_resource path="res://MinedMap_signal - Copy.png" type="Texture" id=14]
+[ext_resource path="res://OmniLight.gd" type="Script" id=15]
+[ext_resource path="res://lcd_2_font.tres" type="DynamicFont" id=16]
+[ext_resource path="res://XandY.gd" type="Script" id=17]
+[ext_resource path="res://Label_update.gd" type="Script" id=18]
+[ext_resource path="res://HowToPlay.gd" type="Script" id=19]
+[ext_resource path="res://ButtonImages/Blank Button.png" type="Texture" id=20]
+[ext_resource path="res://new_tileset.tres" type="TileSet" id=21]
+[ext_resource path="res://OnTile.png" type="Texture" id=22]
+[ext_resource path="res://OnTile.gd" type="Script" id=23]
+[ext_resource path="res://Tutorial.gd" type="Script" id=24]
+[ext_resource path="res://GitButton.gd" type="Script" id=25]
+[ext_resource path="res://ItchButton.gd" type="Script" id=26]
+[ext_resource path="res://ButtonImages/ResetButtonImage.png" type="Texture" id=27]
+[ext_resource path="res://ButtonImages/CreditButtonImageOn.png" type="Texture" id=28]
+[ext_resource path="res://ButtonImages/QuestionButtonImageOn.png" type="Texture" id=29]
+[ext_resource path="res://SceneReset.gd" type="Script" id=30]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="MinedMapMobile" type="Sprite" parent="."]
+position = Vector2( 200, 302 )
+texture = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+script = ExtResource( 4 )
+
+[node name="OmniLight" type="Light2D" parent="Control"]
+visible = false
+position = Vector2( 202, 313 )
+scale = Vector2( 0.906667, 0.83 )
+texture = ExtResource( 14 )
+energy = 4.5
+script = ExtResource( 15 )
+
+[node name="LCDscreen" type="Label" parent="Control"]
+margin_left = 74.0
+margin_top = 67.0
+margin_right = 326.0
+margin_bottom = 119.0
+custom_colors/font_color = Color( 0.878431, 0.501961, 0.172549, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 16 )
+text = "Mined Maps"
+align = 1
+valign = 1
+uppercase = true
+script = ExtResource( 18 )
+
+[node name="XandY" type="Label" parent="Control"]
+margin_left = 73.0
+margin_top = 128.0
+margin_right = 325.0
+margin_bottom = 158.0
+custom_fonts/font = ExtResource( 16 )
+text = "X"
+align = 1
+script = ExtResource( 17 )
+
+[node name="Panel" type="Panel" parent="Control"]
+visible = false
+margin_left = 84.0
+margin_top = 88.0
+margin_right = 315.0
+margin_bottom = 470.0
+
+[node name="HowToButton" type="TextureButton" parent="Control"]
+anchor_left = 1.587
+anchor_right = 1.587
+margin_left = -3.0
+margin_top = -12.0
+margin_right = 400.0
+margin_bottom = 57.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 29 )
+flip_h = true
+script = ExtResource( 3 )
+
+[node name="CreditButton" type="TextureButton" parent="Control"]
+margin_left = 339.0
+margin_top = -14.0
+margin_right = 407.0
+margin_bottom = 54.0
+rect_pivot_offset = Vector2( -521, -58 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 28 )
+script = ExtResource( 1 )
+
+[node name="Credits" type="ColorRect" parent="Control"]
+visible = false
+margin_left = 110.0
+margin_top = 120.0
+margin_right = 298.0
+margin_bottom = 400.0
+color = Color( 0.215686, 0.180392, 0.180392, 1 )
+
+[node name="Credits" type="Label" parent="Control/Credits"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -5.0
+margin_bottom = -132.0
+text = "
+Game By Max Tayler
+Thanks to 
+Hugh Tayler & Joan Tayler 
+Sophie Tayler
+Indiepod Vancouver
+and it's podlings
+"
+align = 1
+
+[node name="ColorRect" type="ColorRect" parent="Control/Credits"]
+margin_left = -109.0
+margin_top = -125.0
+margin_right = 224.0
+margin_bottom = -56.0
+color = Color( 1, 1, 1, 0 )
+
+[node name="ItchButton" type="LinkButton" parent="Control/Credits"]
+anchor_right = 1.0
+anchor_bottom = 1.014
+margin_left = 39.0
+margin_top = 200.0
+margin_right = -43.0
+margin_bottom = -69.92
+text = "Link to Itch Page"
+script = ExtResource( 26 )
+
+[node name="GitButton" type="LinkButton" parent="Control/Credits"]
+anchor_right = 1.0
+anchor_bottom = 1.014
+margin_left = 35.0
+margin_top = 239.0
+margin_right = -38.0
+margin_bottom = -30.92
+focus_mode = 2
+text = "Link to Git Project"
+script = ExtResource( 25 )
+
+[node name="HowToPlay" type="ColorRect" parent="Control"]
+visible = false
+margin_left = 71.0
+margin_top = 127.0
+margin_right = 339.0
+margin_bottom = 432.0
+color = Color( 0.184314, 0.180392, 0.152941, 0.85098 )
+script = ExtResource( 19 )
+
+[node name="ButtonLock" type="ColorRect" parent="Control/HowToPlay"]
+margin_left = -7.0
+margin_top = -130.0
+margin_right = 326.0
+margin_bottom = -61.0
+color = Color( 1, 1, 1, 0 )
+
+[node name="HowToPlayText" type="Label" parent="Control/HowToPlay"]
+anchor_right = 1.0
+anchor_bottom = 0.42
+margin_bottom = -0.100006
+text = "How To Play 
+Use the arrow keys to move one place on the  X or Y axis on a 2D Grind. The color of the light changes to indicate how close the robot is to a Hazard location.
+Landing on a hazard will reset the robot to the start of the level.
+
+Color Index"
+align = 1
+autowrap = true
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HowToPlay"]
+anchor_left = 0.5
+anchor_top = 0.577
+anchor_right = 0.5
+anchor_bottom = 0.577
+margin_left = -45.0
+margin_top = -6.985
+margin_right = 50.0
+margin_bottom = 152.015
+size_flags_horizontal = 0
+
+[node name="Wall" type="Label" parent="Control/HowToPlay/VBoxContainer"]
+margin_right = 120.0
+margin_bottom = 14.0
+hint_tooltip = "You have found the edge of the area"
+mouse_filter = 1
+text = "Wall"
+
+[node name="HowToPlay" type="ColorRect" parent="Control/HowToPlay/VBoxContainer/Wall"]
+margin_left = -35.0
+margin_top = -3.0
+margin_right = -4.0
+margin_bottom = 12.0
+rect_pivot_offset = Vector2( 12, 7 )
+color = Color( 0.984314, 0.890196, 0.890196, 1 )
+
+[node name="Safe" type="Label" parent="Control/HowToPlay/VBoxContainer"]
+margin_top = 18.0
+margin_right = 120.0
+margin_bottom = 32.0
+text = "Safe"
+
+[node name="HowToPlay2" type="ColorRect" parent="Control/HowToPlay/VBoxContainer/Safe"]
+anchor_left = -0.292
+anchor_bottom = 1.0
+margin_left = -0.259998
+margin_top = -1.0
+margin_right = -4.0
+margin_bottom = 1.0
+rect_pivot_offset = Vector2( 12, 8 )
+color = Color( 0, 0.701961, 0.898039, 1 )
+
+[node name="Near" type="Label" parent="Control/HowToPlay/VBoxContainer"]
+margin_top = 36.0
+margin_right = 120.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( -18, -22 )
+text = "Near to Hazard"
+
+[node name="NearRect" type="ColorRect" parent="Control/HowToPlay/VBoxContainer/Near"]
+anchor_right = 1.0
+margin_left = -35.0
+margin_top = 1.0
+margin_right = -123.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( -25, -7 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+color = Color( 0.498039, 0, 0.6, 1 )
+
+[node name="Next" type="Label" parent="Control/HowToPlay/VBoxContainer"]
+margin_top = 54.0
+margin_right = 120.0
+margin_bottom = 68.0
+text = "Next to Hazard"
+
+[node name="NextRect" type="ColorRect" parent="Control/HowToPlay/VBoxContainer/Next"]
+margin_left = -36.0
+margin_right = -4.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( -25, 38 )
+color = Color( 0.8, 0, 0.8, 1 )
+
+[node name="Reset" type="Label" parent="Control/HowToPlay/VBoxContainer"]
+margin_top = 72.0
+margin_right = 120.0
+margin_bottom = 86.0
+text = "Hazard and Restart"
+
+[node name="ResetRect" type="ColorRect" parent="Control/HowToPlay/VBoxContainer/Reset"]
+anchor_left = -0.368
+anchor_top = 0.071
+anchor_bottom = 1.0
+margin_left = 6.96
+margin_top = 0.00599998
+margin_right = -4.0
+margin_bottom = 1.0
+rect_pivot_offset = Vector2( -25, 15 )
+color = Color( 0.8, 0, 0, 1 )
+
+[node name="Start" type="Label" parent="Control/HowToPlay/VBoxContainer"]
+margin_top = 90.0
+margin_right = 120.0
+margin_bottom = 104.0
+rect_pivot_offset = Vector2( -18, -22 )
+text = "Start"
+
+[node name="StartRect" type="ColorRect" parent="Control/HowToPlay/VBoxContainer/Start"]
+anchor_left = -0.159
+anchor_bottom = 1.0
+margin_left = -16.92
+margin_right = -4.0
+margin_bottom = 1.0
+rect_pivot_offset = Vector2( 30, 20 )
+color = Color( 0, 0.980392, 0.2, 0.572549 )
+
+[node name="Level" type="Label" parent="Control/HowToPlay/VBoxContainer"]
+margin_top = 108.0
+margin_right = 120.0
+margin_bottom = 122.0
+rect_pivot_offset = Vector2( -18, -22 )
+text = "Area Complete"
+
+[node name="LevelRect" type="ColorRect" parent="Control/HowToPlay/VBoxContainer/Level"]
+margin_left = -37.0
+margin_top = 1.0
+margin_right = -5.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 30, 20 )
+color = Color( 0.501961, 0.6, 0, 1 )
+
+[node name="TutorialButton" type="TextureButton" parent="Control/HowToPlay"]
+margin_left = 38.0
+margin_top = 315.0
+margin_right = 220.0
+margin_bottom = 384.0
+texture_normal = ExtResource( 20 )
+expand = true
+script = ExtResource( 24 )
+
+[node name="Label" type="Label" parent="Control/HowToPlay/TutorialButton"]
+margin_left = 25.0
+margin_top = 24.0
+margin_right = 157.0
+margin_bottom = 51.0
+custom_fonts/font = ExtResource( 16 )
+text = "TUTORIAL"
+
+[node name="Label2" type="ColorRect" parent="Control"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 191.0
+margin_top = 297.0
+margin_right = 212.0
+margin_bottom = 319.0
+color = Color( 0.556863, 0.462745, 0.462745, 0.662745 )
+
+[node name="Maps" type="Control" parent="Control"]
+
+[node name="Map0" type="Node" parent="Control/Maps"]
+script = ExtResource( 6 )
+
+[node name="Map1" type="Node" parent="Control/Maps"]
+script = ExtResource( 5 )
+
+[node name="Map2" type="Node" parent="Control/Maps"]
+script = ExtResource( 10 )
+
+[node name="Map3" type="Node" parent="Control/Maps"]
+script = ExtResource( 11 )
+
+[node name="Map4" type="Node" parent="Control/Maps"]
+script = ExtResource( 12 )
+
+[node name="Map5" type="Node" parent="Control/Maps"]
+script = ExtResource( 13 )
+
+[node name="StartLabel" type="ColorRect" parent="Control"]
+margin_left = 2.0
+margin_top = 126.0
+margin_right = 398.0
+margin_bottom = 444.0
+color = Color( 0.168627, 0.156863, 0.156863, 0.921569 )
+
+[node name="Label" type="Label" parent="Control/StartLabel"]
+anchor_left = 0.5
+anchor_top = 0.415
+anchor_right = 0.5
+anchor_bottom = 0.415
+margin_left = -157.0
+margin_top = -120.97
+margin_right = 155.0
+margin_bottom = 114.03
+rect_pivot_offset = Vector2( 147, 25 )
+text = "
+You are using a robot to explore a series of caverns and mines lost to time, riddled with hazards and toxic disasters.
+The robot will send back a colored light signal at the entrance of the mine.
+Move in one of the four directions at a time. 
+This game requires a good visual memory. A pen and paper may be handy.
+"
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
+
+[node name="Label" type="Label" parent="Control/StartLabel/Label"]
+anchor_left = 0.5
+anchor_top = 0.415
+anchor_right = 0.5
+anchor_bottom = 0.415
+margin_left = -157.0
+margin_top = 214.475
+margin_right = 155.0
+margin_bottom = 360.475
+rect_pivot_offset = Vector2( 147, 25 )
+text = "
+Game By Max Tayler
+ Ported from an arduino microcontroller project, with an rgb LED and 4 direction buttons 
+"
+align = 1
+autowrap = true
+uppercase = true
+
+[node name="Panel" type="ColorRect" parent="Control/StartLabel"]
+anchor_left = 0.5
+anchor_top = -0.393
+anchor_right = 0.5
+anchor_bottom = -0.393
+margin_left = -201.0
+margin_top = -0.026001
+margin_right = 200.0
+margin_bottom = 60.974
+color = Color( 0.309804, 0.286275, 0.286275, 0.780392 )
+
+[node name="StartButton" type="TextureButton" parent="Control"]
+margin_left = 111.0
+margin_top = 355.0
+margin_right = 293.0
+margin_bottom = 424.0
+texture_normal = ExtResource( 20 )
+expand = true
+
+[node name="Label" type="Label" parent="Control/StartButton"]
+margin_left = 43.0
+margin_top = 27.0
+margin_right = 133.0
+margin_bottom = 54.0
+custom_fonts/font = ExtResource( 16 )
+text = "START"
+
+[node name="GameWin" type="ColorRect" parent="Control"]
+visible = false
+margin_left = 75.0
+margin_top = 130.0
+margin_right = 334.0
+margin_bottom = 414.0
+color = Color( 0.243137, 0.384314, 0.545098, 1 )
+
+[node name="Label" type="Label" parent="Control/GameWin"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -117.5
+margin_right = 117.5
+margin_bottom = 284.0
+text = "
+Congrats 
+You Made to the end!!
+You found what 
+you were looking for
+At the end of mines so Deep 
+And many rewards to Reap
+
+Thanks Have great 
+Day or Night 
+MaX"
+align = 1
+uppercase = true
+
+[node name="TextureButton" type="TextureButton" parent="Control/GameWin"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -32.0
+margin_top = -64.0
+margin_right = 32.0
+texture_normal = ExtResource( 27 )
+script = ExtResource( 30 )
+
+[node name="Buttons" type="Control" parent="."]
+visible = false
+margin_left = 6.0
+margin_top = 439.0
+margin_right = 396.0
+margin_bottom = 598.0
+
+[node name="UpButton" type="TextureButton" parent="Buttons"]
+anchor_left = 0.405
+anchor_right = 0.574
+anchor_bottom = 0.428
+margin_left = 0.0499878
+margin_right = 0.139999
+margin_bottom = -0.052002
+texture_normal = ExtResource( 8 )
+
+[node name="LeftButton" type="TextureButton" parent="Buttons"]
+anchor_left = 0.182
+anchor_top = 0.226
+anchor_right = 0.351
+anchor_bottom = 0.654
+margin_left = 2.02
+margin_top = -0.934002
+margin_right = 2.11
+margin_bottom = -0.986008
+rect_rotation = -90.0
+rect_pivot_offset = Vector2( 33, 37 )
+texture_normal = ExtResource( 8 )
+
+[node name="DownButton" type="TextureButton" parent="Buttons"]
+anchor_left = 0.408
+anchor_top = 0.465
+anchor_right = 0.577
+anchor_bottom = 0.893
+margin_left = -1.12001
+margin_top = 6.06499
+margin_right = -1.03001
+margin_bottom = 6.01299
+texture_normal = ExtResource( 8 )
+flip_v = true
+
+[node name="RightButton" type="TextureButton" parent="Buttons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 240.0
+margin_top = 36.0
+margin_right = -84.0
+margin_bottom = -55.0
+rect_rotation = 90.0
+rect_pivot_offset = Vector2( 33, 37 )
+texture_normal = ExtResource( 8 )
+
+[node name="ResetButton" type="TextureButton" parent="Buttons"]
+margin_left = 327.0
+margin_top = -18.0
+margin_right = 391.0
+margin_bottom = 46.0
+texture_normal = ExtResource( 27 )
+
+[node name="Tutorial" type="Node2D" parent="."]
+visible = false
+position = Vector2( 128, 155 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="TileMap" type="TileMap" parent="Tutorial"]
+tile_set = ExtResource( 21 )
+cell_size = Vector2( 24, 24 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 65536, 0, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 2, 0, 65541, 3, 0, 65542, 0, 0, 131072, 0, 0, 131073, 1, 0, 131074, 5, 0, 131075, 2, 0, 131076, 3, 0, 131077, 4, 0, 131078, 0, 0, 196608, 0, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 2, 0, 196613, 3, 0, 196614, 0, 0, 262144, 0, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 2, 0, 262150, 0, 0, 327680, 0, 0, 327681, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 6, 0, 327686, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0 )
+
+[node name="Sprite" type="Light2D" parent="Tutorial"]
+position = Vector2( 13.75, 10 )
+texture = ExtResource( 22 )
+energy = 2.34
+script = ExtResource( 23 )
+
+[node name="Control" type="Control" parent="Tutorial"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial/Control"]
+margin_left = -161.0
+margin_top = -196.0
+margin_right = -79.0
+margin_bottom = -111.0
+color = Color( 0.321569, 0.313726, 0.313726, 0.745098 )
+
+[connection signal="pressed" from="Control/StartButton" to="Control" method="_on_Start_pressed"]
+[connection signal="pressed" from="Buttons/UpButton" to="Control" method="_on_UpButton_pressed"]
+[connection signal="pressed" from="Buttons/LeftButton" to="Control" method="_on_LeftButton_pressed"]
+[connection signal="pressed" from="Buttons/DownButton" to="Control" method="_on_DownButton_pressed"]
+[connection signal="pressed" from="Buttons/RightButton" to="Control" method="_on_RightButton_pressed"]
+[connection signal="pressed" from="Buttons/ResetButton" to="Control" method="_on_ResetButton_pressed"]

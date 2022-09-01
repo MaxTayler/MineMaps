@@ -13,6 +13,7 @@ func _input(event):
 			print("Input  Works")#start()
 			controls.start()
 			queue_free()
+			
 func _draw():
 	var color = Color(0.5,0.5,0.5,0.8)
 	var rect = Rect2(Vector2(0,200),Vector2(1050,200)) #XY

@@ -39,6 +39,7 @@ func _ready():
 	map_size_y = len(load_level.map_2d)-1
 	print("Map Y")
 	print(map_size_y)
+	start()
 	
 # key and button input 
 func _process(event):
@@ -88,8 +89,8 @@ func _process(event):
 		
 func update_tile():
 	$OmniLight.update_color(color_load)
-	$LCD/Viewport/LCDscreen.update_text(new_text)
-	$UI_Title/VBoxContainer/XandY.update_debug(map_x,map_y)
+	#$LCD/Viewport/LCDscreen.update_text(new_text)
+	#$UI_Title/VBoxContainer/XandY.update_debug(map_x,map_y)
 	var map_value = load_level.map_2d[map_y][map_x]
 	if map_value == 4:
 		death()

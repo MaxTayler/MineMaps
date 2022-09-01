@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Mined Maps Godot Open"
+config/name="Mined Maps 3d Godot Open"
 config/description="RGD Light Puzzle Game"
 run/main_scene="res://MinedGameMapTester.tscn"
 config/icon="res://MinedMapsIcon256.png"
@@ -33,6 +33,7 @@ window/stretch/mode="viewport"
 [global]
 
 icon=false
+scene=false
 
 [input]
 

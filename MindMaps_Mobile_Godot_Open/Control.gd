@@ -81,7 +81,7 @@ func _on_ResetButton_pressed():
 	reset()
 # test 
 func up_press():
-	if map_y > 0 or hold == false: # set bount array 
+	if map_y > 0 : # set bount array 
 		map_y -= 1
 		var map_value = load_level.map_2d[map_y][map_x]
 		print(map_value)
@@ -90,7 +90,7 @@ func up_press():
 		blink()
 		
 func down_press():			
-		if map_y < map_size_y or hold == false: # set bount array
+		if map_y < map_size_y : # set bount array
 			map_y += 1
 		var map_value = load_level.map_2d[map_y][map_x]
 		print(map_value)
@@ -99,7 +99,7 @@ func down_press():
 		blink()
 		
 func right_press():
-	if map_x < map_size_x or hold == false: # set bount array
+	if map_x < map_size_x : # set bount array
 		map_x += 1
 		var map_value = load_level.map_2d[map_y][map_x]
 		print(map_value)
@@ -108,7 +108,7 @@ func right_press():
 		blink()
 		
 func left_press():
-	if map_x > 0 or hold == false: # set bount array 
+	if map_x > 0 : # set bount array 
 		map_x -= 1
 		var map_value = load_level.map_2d[map_y][map_x]
 		print(map_value)

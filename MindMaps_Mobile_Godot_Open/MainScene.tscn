@@ -175,7 +175,7 @@ anchor_right = 1.0
 anchor_bottom = 0.42
 margin_bottom = -0.100006
 text = "How To Play 
-Use the arrow keys to move one place on the  X or Y axis on a 2D Grind. The color of the light changes to indicate how close the robot is to a Hazard location.
+Use the arrow keys to move one place on the  X or Y axis on a 2D Grid. The color of the light changes to indicate how close the robot is to a Hazard location.
 Landing on a hazard will reset the robot to the start of the level.
 
 Color Index"

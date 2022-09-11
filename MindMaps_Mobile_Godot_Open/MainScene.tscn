@@ -354,6 +354,7 @@ script = ExtResource( 12 )
 script = ExtResource( 13 )
 
 [node name="StartLabel" type="ColorRect" parent="Control"]
+visible = false
 margin_left = 2.0
 margin_top = 126.0
 margin_right = 398.0
@@ -411,6 +412,7 @@ margin_bottom = 60.974
 color = Color( 0.309804, 0.286275, 0.286275, 0.780392 )
 
 [node name="StartButton" type="TextureButton" parent="Control"]
+visible = false
 margin_left = 111.0
 margin_top = 355.0
 margin_right = 293.0
@@ -464,6 +466,24 @@ margin_top = -64.0
 margin_right = 32.0
 texture_normal = ExtResource( 27 )
 script = ExtResource( 30 )
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+margin_left = 72.0
+margin_top = 167.0
+margin_right = 329.0
+margin_bottom = 283.0
+color = Color( 0.32549, 0.282353, 0.282353, 0.878431 )
+
+[node name="Story Text" type="Label" parent="Control/ColorRect"]
+anchor_right = 1.048
+anchor_bottom = 1.0
+margin_left = 14.0
+margin_top = 20.0
+margin_right = -16.72
+margin_bottom = -80.0
+text = "Story text goes here, there is a great tale to be told."
+autowrap = true
+uppercase = true
 
 [node name="Buttons" type="Control" parent="."]
 visible = false

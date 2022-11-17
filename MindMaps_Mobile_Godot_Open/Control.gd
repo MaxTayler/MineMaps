@@ -202,5 +202,3 @@ func game_win():
 	var win  = $GameWin
 	win.visible = true
 	pass 
-	
-
